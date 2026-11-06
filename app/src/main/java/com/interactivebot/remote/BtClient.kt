@@ -18,6 +18,7 @@ import kotlin.concurrent.thread
 class BtClient(
     private val onLine: (String) -> Unit,
     private val onClosed: (String) -> Unit,
+    private val onConnected: () -> Unit = {},
 ) {
     companion object {
         // Well-known SPP UUID -- matches the Pi's advertised Serial Port service.
@@ -41,6 +42,7 @@ class BtClient(
                 s.connect()                 // blocks until connected or throws
                 socket = s
                 running = true
+                onConnected()               // let the UI leave the "Connecting…" state
                 onLine("✓ connected to ${safeName(device)}")
                 readLoop(s.inputStream.bufferedReader())
             } catch (e: SecurityException) {

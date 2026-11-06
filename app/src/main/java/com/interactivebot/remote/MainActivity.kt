@@ -47,6 +47,10 @@ class MainActivity : AppCompatActivity() {
                 b.btnConnect.isEnabled = true
                 b.btnConnect.text = "Connect to Pi"
             } },
+            onConnected = { runOnUiThread {
+                b.btnConnect.text = "Connected"   // leave the "Connecting…" state
+                b.btnConnect.isEnabled = true     // tap again to reconnect/switch
+            } },
         )
 
         b.btnConnect.setOnClickListener { ensurePermThenConnect() }
