@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Palette mirrors the Pi kiosk (ui_kiosk.py) so the two UIs read as one. -->
+    <color name="bg">#0E1016</color>          <!-- app background -->
+    <color name="panel">#161A24</color>        <!-- top/input bars -->
+    <color name="bubble_me">#264268</color>    <!-- user bubble, accent-tinted -->
+    <color name="bubble_bot">#222834</color>   <!-- bot bubble, raised panel -->
+    <color name="accent">#5AAAFF</color>       <!-- buttons / highlights -->
+    <color name="txt">#E6EAF0</color>
+    <color name="txt_dim">#8C96A5</color>
+</resources>

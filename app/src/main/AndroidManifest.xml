@@ -15,7 +15,7 @@
         android:allowBackup="true"
         android:label="Bot Remote"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.DayNight">
+        android:theme="@style/Theme.BotRemote">
         <activity
             android:name=".MainActivity"
             android:exported="true"

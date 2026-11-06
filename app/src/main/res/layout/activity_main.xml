@@ -1,68 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#121212"
-    android:padding="8dp">
+    android:background="@color/bg"
+    android:fitsSystemWindows="true">
 
+    <!-- Top bar: Connect (fills) + voice / cam / status icon buttons. -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/panel"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnConnect"
+            style="@style/Widget.Material3.Button"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Connect to Pi" />
+            android:text="Connect to Pi"
+            app:cornerRadius="22dp"
+            app:icon="@android:drawable/stat_sys_data_bluetooth"
+            app:iconGravity="textStart" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnVoice"
+            style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="🎙" />
+            android:layout_marginStart="6dp"
+            android:minWidth="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:paddingHorizontal="14dp"
+            android:text="🎙"
+            app:cornerRadius="22dp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCam"
+            style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="📷" />
+            android:layout_marginStart="6dp"
+            android:minWidth="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:paddingHorizontal="14dp"
+            android:text="📷"
+            app:cornerRadius="22dp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnStatus"
+            style="@style/Widget.Material3.Button.TonalButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ℹ" />
+            android:layout_marginStart="6dp"
+            android:minWidth="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:paddingHorizontal="14dp"
+            android:text="ℹ"
+            app:cornerRadius="22dp" />
     </LinearLayout>
 
+    <!-- Chat transcript -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingVertical="8dp" />
 
+    <!-- Input row: rounded field + send -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/panel"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp">
 
         <EditText
             android:id="@+id/input"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:background="@drawable/input_bg"
             android:hint="Type a message…"
-            android:textColor="#FFFFFF"
-            android:textColorHint="#888888"
+            android:textColor="@color/txt"
+            android:textColorHint="@color/txt_dim"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
             android:inputType="textCapSentences|textMultiLine"
-            android:maxLines="3" />
+            android:maxLines="4" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSend"
+            style="@style/Widget.Material3.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Send" />
+            android:layout_marginStart="8dp"
+            android:text="Send"
+            app:cornerRadius="22dp" />
     </LinearLayout>
 </LinearLayout>
